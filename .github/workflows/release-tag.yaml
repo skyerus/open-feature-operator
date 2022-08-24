@@ -30,7 +30,7 @@ jobs:
       - name: Update README.md version
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "https://github\\.com/open-feature/open-feature-operator/releases/download/v\\d\\.\\d\\.\\d"
+          find: "https://github\\.com/open-feature/open-feature-operator/releases/download/v[\\d]+\\.[\\d]+\\.[\\d]+"
           replace: "https://github.com/open-feature/open-feature-operator/releases/download/${{ steps.get_version.outputs.VERSION }}"
           regex: true
           include: README.md
