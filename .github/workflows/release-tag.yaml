@@ -46,7 +46,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          force: true
 
       - name: Release
         uses: softprops/action-gh-release@v1
