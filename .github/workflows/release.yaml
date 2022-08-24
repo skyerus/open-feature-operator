@@ -29,12 +29,18 @@ jobs:
           make controller-gen
           IMG=ghcr.io/open-feature/open-feature-operator:${GITHUB_REF#refs/*/} make release-manifests
 
-      - name: Update version
+      - name: Update README.md version
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "https://github\\.com/open-feature/open-feature-operator/releases/download/v\\d\\.\\d\\.\\d"
           replace: "https://github.com/open-feature/open-feature-operator/releases/download/v${{ steps.get_version.outputs.VERSION }}"
           regex: true
+
+      - name: Commit files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -s -m "Updated README.md version" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
