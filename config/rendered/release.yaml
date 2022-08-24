@@ -452,7 +452,7 @@ spec:
         env:
         - name: FLAGD_VERSION
           value: v0.0.7
-        image: ghcr.io/open-feature/open-feature-operator:v0.0.14
+        image: ghcr.io/open-feature/open-feature-operator:v0.0.15
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
