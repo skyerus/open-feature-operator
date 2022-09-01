@@ -11,13 +11,13 @@ The open-feature-operator is a Kubernetes native operator that allows you to exp
 
 _Requires [cert manager](https://cert-manager.io/docs/installation/kubernetes/) installed_
 
-v0.1.1 <!---x-release-please-version-->
+v0.1.2 <!---x-release-please-version-->
 
 <!---x-release-please-start-version-->
 ```
 kubectl create namespace open-feature-operator-system
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.1.1/certificate.yaml
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.1.1/release.yaml
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.1.2/certificate.yaml
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.1.2/release.yaml
 ```
 <!---x-release-please-end-->
 
