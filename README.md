@@ -14,8 +14,8 @@ _Requires [cert manager](https://cert-manager.io/docs/installation/kubernetes/) 
 <!---x-release-please-start-version-->
 ```
 kubectl create namespace open-feature-operator-system
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.0.9/certificate.yaml
-kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.0.9/release.yaml
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.0.10/certificate.yaml
+kubectl apply -f https://github.com/open-feature/open-feature-operator/releases/download/v0.0.10/release.yaml
 ```
 <!---x-release-please-end-->
 
