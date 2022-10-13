@@ -32,6 +32,7 @@ jobs:
           make controller-gen
           IMG=ghcr.io/open-feature/open-feature-operator:${GITHUB_REF#refs/*/} make release-manifests
 
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
