@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/skyerus/open-feature-operator/compare/v0.3.0...v0.3.1) (2022-10-13)
+
+
+### Features
+
+* fix ([4e15dc0](https://github.com/skyerus/open-feature-operator/commit/4e15dc03a1a59e410850fd20502c80d0c70146b4))
+* use MY_TOKEN ([b9b0257](https://github.com/skyerus/open-feature-operator/commit/b9b0257594253e0ce5e95516fdfbc84124eb9f43))
+
 ## [0.3.0](https://github.com/skyerus/open-feature-operator/compare/v0.2.0...v0.3.0) (2022-10-13)
 
 
