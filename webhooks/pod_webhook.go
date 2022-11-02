@@ -20,7 +20,7 @@ import (
 
 // we likely want these to be configurable, eventually
 const (
-	FlagDImagePullPolicy   = "Always"
+	FlagDImagePullPolicy   = "Never"
 	clusterRoleBindingName = "open-feature-operator-flagd-kubernetes-sync"
 )
 
@@ -185,7 +185,10 @@ func (m *PodMutator) createConfigMap(ctx context.Context, name string, namespace
 		references = append(references, corev1alpha1.GetFfReference(&ff))
 	}
 
-	cm := corev1alpha1.GenerateFfConfigMap(name, namespace, references, ff.Spec)
+	cm, err := corev1alpha1.GenerateFfConfigMap(name, namespace, references, ff.Spec)
+	if err != nil {
+		return err
+	}
 
 	return m.Client.Create(ctx, &cm)
 }
