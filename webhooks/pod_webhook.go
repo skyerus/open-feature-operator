@@ -20,7 +20,7 @@ import (
 
 // we likely want these to be configurable, eventually
 const (
-	FlagDImagePullPolicy   = "Never"
+	FlagDImagePullPolicy   = "Always"
 	clusterRoleBindingName = "open-feature-operator-flagd-kubernetes-sync"
 )
 
