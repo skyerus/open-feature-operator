@@ -8,6 +8,8 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  # Default minimum version of Go to support.
+  DEFAULT_GO_VERSION: 1.18
 
 permissions:
   contents: read
@@ -110,7 +112,7 @@ jobs:
         - name: Setup go
           uses: actions/setup-go@v3
           with:
-            go-version: '1.17.11'
+            go-version: ${{ env.DEFAULT_GO_VERSION }}
         - run: |
             make update-flagd
             go mod tidy
