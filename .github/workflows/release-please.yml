@@ -132,3 +132,31 @@ jobs:
               config/rendered/release.yaml
               config/samples/end-to-end.yaml
               open-feature-operator-sbom.spdx.json
+
+  release-charts:
+    needs: release-please
+    runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.release_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: gh-pages
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Merge release to gh-pages
+        run: git merge ${{ needs.release-please.outputs.release_tag_name }}
+
+      - name: Generate helm charts
+        run: make helm-package
+
+      - name: Commit and push
+        run: |
+          git add .
+          git commit -s -m "chore: released charts ${{ needs.release-please.outputs.release_tag_name }}"
+          git push origin gh-pages
